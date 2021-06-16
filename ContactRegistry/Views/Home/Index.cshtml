@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>The catalog</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Welcome to the coolest catalog for companies and contacts!</h2>
+        <p>
+
+            This is a very (Read: not at all) GDPR approved register of companies and contact persons.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Keep track of companies</h2>
+        <p>By navigating to the Companies tab you can easily edit, view details or delete companies in the catalog.</p>
+        <a class="btn btn-default" asp-controller="company" asp-action="index">Administrera företag</a>
+    </div>
+    <div class="col-md-4">
+        <h2>Keep track of contacts</h2>
+        <p>By navigating to the Contacts tab you can easily edit, view details or delete contacts in the catalog. You can also connect contact persons to companies or check what companies your contacts already belong to.</p>
+        <a class="btn btn-default" asp-controller="company" asp-action="index">Administrera kontakter</a>
+    </div>
+</div>
