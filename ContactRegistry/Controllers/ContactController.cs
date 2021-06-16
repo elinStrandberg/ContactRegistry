@@ -183,7 +183,7 @@ namespace ContactRegistry.Controllers
         }
         //GET: Contact/GetCompany
         [HttpPost, ActionName("GetCompany")]
-        public ActionResult GetCompany(ContactGetCompanyVM viewModel)
+        public ActionResult GetCompany(ContactGetCompanyVM viewModel, int? id)
         {
             Enrollment newEnrollment = new Enrollment { CompanyID = viewModel.SelectedCompanyId, ContactID = viewModel.ContactID};
 
@@ -194,8 +194,7 @@ namespace ContactRegistry.Controllers
                     {
                         db.Enrollments.Add(newEnrollment);
                         db.SaveChanges();
-                    return RedirectToAction("Index");
-                    //return RedirectToAction("Details", viewModel.ContactID);
+                    return RedirectToAction("Details", new { id });
                 }
                 }
                 catch (RetryLimitExceededException)
